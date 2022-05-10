@@ -10,6 +10,11 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/MartinLoza/Canek/workflows/R-CMD-check/badge.svg)](https://github.com/MartinLoza/Canek/actions)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/Canek)](https://cran.r-project.org/package=Canek)
+[![CRAN
+Downloads](https://cranlogs.r-pkg.org/badges/Canek)](https://cran.r-project.org/package=Canek)
+[![CRAN
+Downloads](https://cranlogs.r-pkg.org/badges/grand-total/Canek)](https://cran.r-project.org/package=Canek)
 <!-- badges: end -->
 
 ## Citation
@@ -27,10 +32,10 @@ Bioinformatics*, *1*(4), lqac022. doi: 10.1093/nargab/lqac022 (URL:
 
 ## Installation
 
-<!-- You can install the released version of Canek from [CRAN](https://CRAN.R-project.org) with: -->
-<!-- ``` r -->
-<!-- install.packages("Canek") -->
-<!-- ``` -->
+You can install the release version of Canek from
+[CRAN](https://CRAN.R-project.org) with:
+
+    install.packages("Canek")
 
 You can install the development version from
 [GitHub](https://github.com/) with:
@@ -50,11 +55,11 @@ library(Canek)
 res <- RunCanek(SimBatches$batches)
 res[1:5, 1:5]
 #>          Cell1    Cell2    Cell3    Cell4    Cell5
-#> Gene1 6.153816 6.216487 6.955690 6.680703 6.599896
-#> Gene2 6.925125 7.046951 7.335873 7.623013 7.017121
-#> Gene3 5.451978 6.140471 6.149198 6.046806 6.158075
-#> Gene4 6.793623 7.044712 6.857325 6.274883 6.287759
-#> Gene5 2.791353 2.271425 4.410185 2.571911 3.155063
+#> Gene1 6.145644 6.228590 6.960904 6.665023 6.586427
+#> Gene2 6.919552 7.048549 7.328128 7.649456 7.005002
+#> Gene3 5.468337 6.115350 6.146068 6.085750 6.142014
+#> Gene4 6.810614 7.076788 6.872226 6.359445 6.303407
+#> Gene5 2.848188 2.160687 4.454532 2.467829 3.165861
 ```
 
 For more tutorials using Canek check out our github page and vignettes:
