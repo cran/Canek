@@ -13,15 +13,24 @@ RunCanek(x, ...)
   x,
   batches = NULL,
   slot = "data",
-  assay = "RNA",
+  assay = NULL,
   features = NULL,
   selection.method = "vst",
+  nfeatures = 2000,
   fvf.nfeatures = 2000,
+  integration.name = "Canek",
   debug = FALSE,
   ...
 )
 
-\method{RunCanek}{SingleCellExperiment}(x, batches = NULL, assay = "counts", debug = FALSE, ...)
+\method{RunCanek}{SingleCellExperiment}(
+  x,
+  batches = NULL,
+  assay = "logcounts",
+  integration.name = "Canek",
+  debug = FALSE,
+  ...
+)
 
 \method{RunCanek}{list}(x, ...)
 }
@@ -34,13 +43,17 @@ RunCanek(x, ...)
 
 \item{slot}{slot used for Seurat objects (default: data).}
 
-\item{assay}{assay used for Seurat objects (default: RNA).}
+\item{assay}{assay used for Seurat objects.}
 
 \item{features}{optional vector of features to use for correction.}
 
 \item{selection.method}{method used for FindVariableFeatures on Seurat objects when features is NULL.}
 
-\item{fvf.nfeatures}{function used to collapse variable features from different batches. Default is intersect.}
+\item{nfeatures}{number of features returned by SelectIntegrationFeatures.}
+
+\item{fvf.nfeatures}{number of features returned by FindVariableFeatures.}
+
+\item{integration.name}{name for the integrated assay.}
 
 \item{debug}{whether to store information about correction vector.}
 }

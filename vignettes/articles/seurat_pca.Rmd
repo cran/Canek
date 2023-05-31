@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(Canek)
 library(Seurat)
+library(ggplot2)
 ```
 
 # Create Seurat object
@@ -38,7 +39,7 @@ table(x$orig.ident)
 
 ```{r}
 x <- NormalizeData(x)
-x <- FindVariableFeatures(x, nfeatures=100)
+x <- FindVariableFeatures(x)
 VariableFeaturePlot(x)
 ```
 
@@ -47,12 +48,13 @@ x <- ScaleData(x)
 ```
 
 ```{r}
-x <- RunPCA(x)
+x <- RunPCA(x, verbose = FALSE)
 ```
 
 ## PCA plot before correction
 
 ```{r}
+ElbowPlot(x)
 DimPlot(x, group.by = "orig.ident")
 DimPlot(x, group.by = "cell_type")
 ```
@@ -62,25 +64,33 @@ DimPlot(x, group.by = "cell_type")
 We pass the column containing the batch information.
 
 ```{r}
-x <- RunCanek(x, "orig.ident")
+dims <- 10
+x1 <- RunCanek(x, "orig.ident", correctEmbeddings = TRUE, pcaDim = dims)
+x2 <- RunCanek(x, "orig.ident", correctEmbeddings = FALSE)
 ```
-
-The features selected during integration are assigned as variable features.
 
 ```{r}
-head(VariableFeatures(x, assay="Canek"))
+x1
+x2
 ```
+
 
 We scale features and run PCA.
 
 ```{r}
-x <- ScaleData(x)
-x <- RunPCA(x)
+x2 <- ScaleData(x2, verbose = FALSE)
+x2 <- RunPCA(x2, verbose = FALSE, npcs = dims)
 ```
+
+```{r}
+x1 <- RunUMAP(object = x1, reduction = "canek", dims = 1:dims, verbose = FALSE)
+x2 <- RunUMAP(object = x2, reduction = "pca", dims = 1:dims, verbose = FALSE)
+```
+
 
 ## PCA plot after correction
 
-```{r}
-DimPlot(x, group.by = "orig.ident")
-DimPlot(x, group.by = "cell_type")
+```{r fig.width=4}
+DimPlot(x2,  group.by = "orig.ident") + DimPlot(x2, group.by = "cell_type") & coord_fixed() & ggtitle("Old")
+DimPlot(x1,  group.by = "orig.ident") + DimPlot(x1,  group.by = "cell_type") & coord_fixed() & ggtitle("New")
 ```
