@@ -1,7 +1,7 @@
-98e12e529014e9826893b0c54e5c79dd *DESCRIPTION
+276e34a2cec455f2c6ba88ddaa4e7510 *DESCRIPTION
 7e3ca81c81ddf2694905ed01b817ae03 *LICENSE
 b9687b4e5f4c00690c49d51ea49945ec *NAMESPACE
-72d75906653dc2afc7d7f481ee89ba15 *NEWS.md
+12e756fcaf782b8271bf626640aa55fd *NEWS.md
 449a6895227ff317f68def838e6a1e59 *R/BatchCorrection.R
 10caeabad3d953f93bccb2f30ce8a995 *R/Canek-package.R
 fd48fbac07c31ea41784851d9a87a605 *R/Cluster.R
@@ -14,13 +14,13 @@ f23360cc71f79498713b6cc9d8f28397 *R/Fuzzy.R
 b27ee26303035a15f0a96dcdc8053a6d *R/MNN.R
 7bf0b13c2b9cdec424435e0084cd7568 *R/RunCanek.R
 886e7501a75b17fc403c79ba72411f8b *README.md
-711a19d718b1f294b75e1415bbb1c801 *build/partial.rdb
+faed33f2698fec11d4fa95037e7d851d *build/partial.rdb
 4b27ec5a43dfaa8cd34021b5ab93ead8 *build/vignette.rds
 2bcc7fb50004c4dd5a11983eac146f83 *data/SimBatches.rda
 cb137363c013b7de8cc325bdc7803b9c *inst/CITATION
 8cdfb755fed4cfdced6680c9aff8af36 *inst/doc/toy_example.R
 7074677eac14ddae1fc68496d3aa2501 *inst/doc/toy_example.Rmd
-a9f5f17760eb8467101532ef2e0c873e *inst/doc/toy_example.html
+0a448ae198f2db9d338e8b69c8f3af88 *inst/doc/toy_example.html
 02dd2d2c3282cd6d986f80e39c44e732 *man/Canek-package.Rd
 a73cba2470dd6051b339a840086d11e9 *man/CheckZeroCV.Rd
 d883671b7b148a0bf9d36dffa523adfa *man/CorrectBatch.Rd
@@ -33,7 +33,7 @@ b417c9df8cc98d7bc3ccad1599965cb6 *man/PairsFiltering.Rd
 0f2cbdcae0cb54191d3c5e32f08f87bb *man/RunCanek.Rd
 22e572eaea2eea696b848876abd74692 *man/SimBatches.Rd
 d5a7ad3fc75271482e8645c0cf5a390d *tests/testthat.R
-236e06be789c6adfab3266a9a56d3c93 *tests/testthat/test-Clustering.R
+d52bf547a13da87fdfe2d9d46d7c2bab *tests/testthat/test-Clustering.R
 d94d0b8e32ab831bca2527e1e5b5d569 *tests/testthat/test-CorrectBatch.R
 7e4942a4c915dd51e8150d2e5df584f6 *tests/testthat/test-CorrectBatches.R
 31f0871b79efb01f34e36e5270c24041 *tests/testthat/test-Estimation.R
